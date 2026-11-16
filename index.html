@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi Rian Futebol (@daviriann) · Links Oficiais</title>
+    
+    <!-- Meta Tags para Redes Sociais -->
+    <meta name="description" content="Hub oficial de links de Futebol e Freestyle de Davi Rian. Vídeos de gols, canetas, desafios 1x1, YouTube, TikTok e comunidade da resenha.">
+    <meta property="og:title" content="Davi Rian Futebol · Hub Oficial de Links">
+    <meta property="og:description" content="Camisa 10 nos gramados! Desafios de bola, melhores momentos e resenha esportiva.">
+    <meta property="og:image" content="./assets/avatar_fut.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#06120E">
+
+    <link rel="icon" type="image/jpeg" href="./assets/avatar_fut.jpg">
+
+    <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        stadium: ['"Syne"', 'sans-serif']
+                    },
+                    colors: {
+                        stadium: {
+                            green: '#10B981',
+                            gold: '#F59E0B',
+                            pitch: '#059669',
+                            dark: '#06120E',
+                            card: '#0B1E17',
+                            hover: '#112B21',
+                            border: 'rgba(16, 185, 129, 0.25)'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #06120E;
+            color: #E2E8F0;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.22) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.16) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(5, 150, 105, 0.15) 0px, transparent 60%);
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .fut-link {
+            background: rgba(11, 30, 23, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(16, 185, 129, 0.22);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fut-link:hover {
+            transform: translateY(-2px) scale(1.01);
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.25), 0 0 15px rgba(245, 158, 11, 0.2);
+            background: rgba(17, 43, 33, 0.95);
+        }
+
+        .gold-ring {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.6), 0 0 15px rgba(245, 158, 11, 0.5);
+            animation: ringShine 3s infinite alternate;
+        }
+
+        @keyframes ringShine {
+            0% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.6), 0 0 15px rgba(245, 158, 11, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.6), 0 0 15px rgba(16, 185, 129, 0.5); }
+        }
+
+        .pulse-match {
+            animation: matchPulse 1.4s infinite;
+        }
+
+        @keyframes matchPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.15); }
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-between px-4 py-8 sm:py-12">
+
+    <!-- Container Central -->
+    <main class="w-full max-w-md mx-auto flex flex-col items-center">
+
+        <!-- Topo: Status & Botões -->
+        <div class="w-full flex items-center justify-between mb-6">
+            <span class="text-[11px] font-mono font-bold tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-match"></span>
+                <span>CAMISA 10 · TEMPORADA 2026</span>
+            </span>
+
+            <div class="flex items-center gap-2">
+                <button onclick="openQrModal()" class="w-9 h-9 rounded-full bg-stadium-card border border-stadium-border text-slate-400 hover:text-white flex items-center justify-center transition-all" title="Ver QR Code">
+                    <i data-lucide="qr-code" class="w-4 h-4"></i>
+                </button>
+                <button onclick="shareLink()" class="w-9 h-9 rounded-full bg-stadium-card border border-stadium-border text-slate-400 hover:text-white flex items-center justify-center transition-all" title="Compartilhar">
+                    <i data-lucide="share-2" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Perfil do Davi Rian Futebol -->
+        <div class="flex flex-col items-center text-center mb-6">
+            <div class="relative mb-4">
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-emerald-400/80 p-1 gold-ring bg-stadium-card">
+                    <img src="./assets/avatar_fut.jpg" alt="Davi Rian Futebol" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div class="absolute -bottom-1 -right-1 bg-amber-500 border-2 border-stadium-dark p-1.5 rounded-full text-black shadow-lg font-bold" title="Camisa 10 Oficial">
+                    ⚽
+                </div>
+            </div>
+
+            <div class="flex items-center gap-1.5 mb-1">
+                <h1 class="text-2xl sm:text-3xl font-stadium font-extrabold text-white tracking-wide">DAVI RIAN</h1>
+                <svg class="w-5 h-5 text-emerald-400 fill-emerald-400" viewBox="0 0 24 24"><path d="m9 16.17 7.88-7.88a1.2 1.2 0 0 0-1.7-1.7L9 12.77 5.82 9.59a1.2 1.2 0 0 0-1.7 1.7l4.88 4.88Z"/></svg>
+            </div>
+
+            <p class="text-xs font-mono text-emerald-400 font-semibold mb-3">@daviriann · Futebol & Freestyle</p>
+
+            <div class="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold mb-3 flex items-center gap-1.5">
+                <span>⚽</span>
+                <span>Desafios, Gols, Dribles & Resenha</span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 max-w-xs leading-relaxed">
+                A verdadeira resenha do futebol raiz. Embaixadinhas, voleios, desafios 1x1 e o dia a dia nos gramados!
+            </p>
+        </div>
+
+        <!-- Destaque: Canal do YouTube de Futebol -->
+        <a href="https://www.youtube.com/@daviriannn" target="_blank" rel="noopener" class="w-full p-4 mb-3 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-amber-500 text-black font-extrabold text-sm sm:text-base flex items-center justify-between shadow-lg shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-black/15 flex items-center justify-center font-bold text-xl">
+                    🔴
+                </div>
+                <div class="text-left">
+                    <div class="font-extrabold">Canal de Futebol no YouTube</div>
+                    <div class="text-[11px] text-emerald-950 font-medium">Inscreva-se para ver os desafios e vlogs completos</div>
+                </div>
+            </div>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+
+        <!-- Lista de Links de Futebol -->
+        <div class="w-full flex flex-col gap-2.5 mb-8">
+
+            <!-- LINK: TikTok de Gols & Dribles -->
+            <a href="https://www.tiktok.com/@daviriann" target="_blank" rel="noopener" class="w-full p-3.5 rounded-xl fut-link flex items-center justify-between group border-l-4 border-l-cyan-400">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 fill-cyan-400" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.34 22a6.34 6.34 0 0 0 6.33-6.32V8.92a8.28 8.28 0 0 0 4.84 1.54V7.02a4.87 4.87 0 0 1-.92-.33Z"/></svg>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors">TikTok de Gols & Freestyle (@daviriann)</div>
+                        <div class="text-[11px] text-slate-400">Canetas, chapéus, finalizações e vídeos virais de bola</div>
+                    </div>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- LINK: Instagram Oficial -->
+            <a href="https://www.instagram.com/daviriann" target="_blank" rel="noopener" class="w-full p-3.5 rounded-xl fut-link flex items-center justify-between group border-l-4 border-l-pink-500">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-pink-500/15 border border-pink-500/30 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white group-hover:text-pink-400 transition-colors">Instagram Oficial (@daviriann)</div>
+                        <div class="text-[11px] text-slate-400">Stories dos treinos, bastidores de jogos e rotina esportiva</div>
+                    </div>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- LINK: Kwai de Futebol -->
+            <a href="https://www.kwai.com/@daviriannnn" target="_blank" rel="noopener" class="w-full p-3.5 rounded-xl fut-link flex items-center justify-between group border-l-4 border-l-amber-500">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="video" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">Kwai de Futebol (@daviriannnn)</div>
+                        <div class="text-[11px] text-slate-400">Lances rápidos, jogadas de efeito e desafios diários</div>
+                    </div>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- LINK: Portal Oficial Davi Rian Futebol -->
+            <a href="https://davirian-site.vercel.app" target="_blank" rel="noopener" class="w-full p-3.5 rounded-xl fut-link flex items-center justify-between group border-l-4 border-l-emerald-500">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="trophy" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">Portal Oficial de Futebol & Mídia</div>
+                        <div class="text-[11px] text-slate-400">Galeria de fotos, vídeos em alta resolução e campeonatos</div>
+                    </div>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- LINK: Spotify Playlist de Aquecimento & Treino -->
+            <a href="https://open.spotify.com/user/31lktxgjusaqtulieglfgxjsajq4" target="_blank" rel="noopener" class="w-full p-3.5 rounded-xl fut-link flex items-center justify-between group border-l-4 border-l-emerald-400">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="music" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">Playlist de Treino no Spotify</div>
+                        <div class="text-[11px] text-slate-400">Trilha pesada para aquecimento antes de entrar em campo</div>
+                    </div>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- LINK: Desafios 1x1, Jogos e Patrocínios no WhatsApp -->
+            <a href="https://wa.me/557196815876?text=Fala%20Davi!%20Quero%20combinar%20um%20desafio%20de%20futebol%20ou%20patroc%C3%ADnio!" target="_blank" rel="noopener" class="w-full p-3.5 rounded-xl fut-link flex items-center justify-between group border-l-4 border-l-amber-400">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">Desafios 1x1, Jogos & Patrocínios</div>
+                        <div class="text-[11px] text-slate-400">Convites para rachas, desafios com outros criadores e marcas</div>
+                    </div>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- LINK: X (Twitter) Debates da Rodada -->
+            <a href="https://x.com/DaviRiann" target="_blank" rel="noopener" class="w-full p-3.5 rounded-xl fut-link flex items-center justify-between group border-l-4 border-l-sky-400">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white group-hover:text-sky-400 transition-colors">X (Twitter) · Opiniões da Rodada</div>
+                        <div class="text-[11px] text-slate-400">Comentários dos clássicos, Brasileirão e Champions League</div>
+                    </div>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+            </a>
+
+            <!-- LINK: Facebook Oficial -->
+            <a href="https://www.facebook.com/davi.rian.641954/" target="_blank" rel="noopener" class="w-full p-3.5 rounded-xl fut-link flex items-center justify-between group border-l-4 border-l-indigo-500">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-600/15 border border-indigo-600/30 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white group-hover:text-indigo-400 transition-colors">Página no Facebook</div>
+                        <div class="text-[11px] text-slate-400">Publicações e resenha completa com a torcida</div>
+                    </div>
+                </div>
+                <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+            </a>
+
+        </div>
+
+        <!-- Banner Visual com Foto Real do Davi no Gramado -->
+        <div class="w-full rounded-2xl overflow-hidden border border-stadium-border mb-8 relative group">
+            <img src="./assets/banner_fut.jpg" alt="Davi Rian Futebol" class="w-full h-36 object-cover object-center group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#06120E] via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs font-bold text-white">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 pulse-match"></span> Gramados & Freestyle</span>
+                <span class="text-amber-300 font-mono text-[11px]">Davi Rian #10</span>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="text-center text-slate-500 text-[11px]">
+            <p>© 2026 <strong>Davi Rian Futebol</strong> · Salvador/BA</p>
+            <p class="mt-1">Freestyle, Desafios Esportivos & Resenha Raiz</p>
+        </footer>
+
+    </main>
+
+    <!-- Modal de QR Code -->
+    <div id="qr-modal" style="display: none;" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-stadium-card border border-stadium-border p-6 rounded-3xl max-w-xs w-full text-center relative shadow-2xl">
+            <button onclick="closeQrModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button>
+            <h3 class="text-base font-stadium font-bold text-white mb-1">ESCANEIE O QR CODE</h3>
+            <p class="text-xs text-slate-400 mb-4">Abra o Link de Futebol do Davi no seu celular</p>
+            <div class="p-3 bg-white rounded-2xl mx-auto inline-block mb-4">
+                <img id="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fdavi-fut-links.vercel.app%2F" alt="QR Code Davi Futebol" class="w-44 h-44">
+            </div>
+            <button onclick="closeQrModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-amber-500 text-black font-extrabold text-xs">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function shareLink() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Davi Rian Futebol · Links Oficiais',
+                    text: 'Acompanhe todos os lances, gols e canais de futebol do Davi Rian:',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link de futebol copiado com sucesso!');
+            }
+        }
+
+        function openQrModal() {
+            document.getElementById('qr-modal').style.display = 'flex';
+        }
+
+        function closeQrModal() {
+            document.getElementById('qr-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
